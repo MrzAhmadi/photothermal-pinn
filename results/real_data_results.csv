@@ -1,0 +1,10 @@
+dataset,method,a_est,tau_est,a_err_pct,tau_err_pct,t_off_over_tau
+"Vikas 2023 GNR 10×38 nm, NIR",Roper,0.04144,366.2,-8.5,0.1,2.46
+"Vikas 2023 GNR 10×38 nm, NIR",whole-curve fit,0.04532,366.2,0.1,0.1,2.46
+"Vikas 2023 GNR 10×38 nm, NIR",PINN + switch,0.04531,366.3,0.0,0.1,2.46
+"Sánchez 2014 B-GNR 10×41 nm, 808 nm",Roper,0.05359,368.1,-0.9,0.9,5.89
+"Sánchez 2014 B-GNR 10×41 nm, 808 nm",whole-curve fit,0.05404,366.3,-0.1,0.4,5.89
+"Sánchez 2014 B-GNR 10×41 nm, 808 nm",PINN + switch,0.05388,367.5,-0.4,0.7,5.89
+"Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",Roper,0.06342,384.2,-0.3,0.0,5.68
+"Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",whole-curve fit,0.06367,383.9,0.1,-0.0,5.68
+"Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",PINN + switch,0.06366,383.9,0.1,-0.0,5.68

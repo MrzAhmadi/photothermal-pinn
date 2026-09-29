@@ -8,3 +8,9 @@ dataset,method,a_est,tau_est,a_err_pct,tau_err_pct,t_off_over_tau
 "Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",Roper,0.06342,384.2,-0.3,0.0,5.68
 "Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",whole-curve fit,0.06367,383.9,0.1,-0.0,5.68
 "Sánchez 2014 PEG-GNR 10×41 nm, 808 nm",PINN + switch,0.06366,383.9,0.1,-0.0,5.68
+"Gallo 2025 AuNR, 785 nm",Roper,0.09282,430.2,28.9,-29.4,2.5
+"Gallo 2025 AuNR, 785 nm",whole-curve fit,0.072,609.0,-0.0,-0.0,2.5
+"Gallo 2025 AuNR, 785 nm",PINN + switch,0.07253,605.2,0.7,-0.6,2.5
+"Gallo 2025 AuNR@Si, 785 nm",Roper,0.06345,337.0,17.7,-17.8,3.49
+"Gallo 2025 AuNR@Si, 785 nm",whole-curve fit,0.05387,410.1,-0.0,-0.0,3.49
+"Gallo 2025 AuNR@Si, 785 nm",PINN + switch,0.05419,408.1,0.5,-0.5,3.49

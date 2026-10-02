@@ -92,4 +92,4 @@ class NetDiscovery(Net):
             input_dim, output_dim, n_units, epochs, loss, lr, loss2, loss2_weight
         )
 
-        self.r = nn.Parameter(data=torch.tensor([0.]))
+        self.kappa = nn.Parameter(data=torch.tensor([0.]))

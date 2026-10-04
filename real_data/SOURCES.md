@@ -38,10 +38,18 @@ the old versions remain in the git history.
 
 | Source | Magnitude |
 |--------|-----------|
-| Line centroid / pixel size | ±0.05–0.14 °C, ±2.5–6.6 s |
-| Axis calibration (tick-fit residual) | < 0.04 °C, < 2 s |
+| Line centroid / pixel size | ±0.05–0.13 °C, ±2.5–6.6 s (one pixel) |
+| Axis calibration (tick-fit residual) | below one pixel (≤ 0.03 °C, ≤ 4.4 s) |
 | Switch-on / switch-off time | ±1 pixel column (2.5–6.6 s) |
 | Single-τ ODE misfit (whole-curve fit RMS) | 0.36–1.64 °C |
+
+**Re-check (2026-10-04).** The figures were downloaded again from the image URLs below and all five curves were
+re-digitised independently (tick-mark calibration, per-column colour centroid). Pixel sizes: Vikas Fig. 6(g)
+0.066 °C and 6.30 s, Sánchez Fig. 6 0.134 °C and 6.57 s, Armenta-Gamez Fig. 4A 0.050 °C and 2.50 s per pixel;
+tick-fit residuals stay below one pixel. The re-digitised curves match the CSV files with an RMS difference of
+0.042 (DS1), 0.035 (DS2a), 0.034 (DS2b), 0.032 (DS3) and 0.023 °C (DS4); the largest single differences are
+0.06–0.22 °C, with near-vertical switch-off segments excluded. The Armenta-Gamez switch-off falls at 25.4 min
+(AuNR) and 24.2 min (AuNR@Si) on the figure axis and the switch-on at 3.0 and 3.3 min.
 
 ---
 
@@ -149,7 +157,9 @@ initial baseline (by 1.2 °C and 2.0 °C); the water control also drifts up by a
 
 Figure notes: the x tick labelled "35" sits at the 30-min position (uniform tick spacing). The
 article text states 25 min of irradiation and a 64 °C peak; the figure's own tick marks give
-22.5 min and 62.8 °C, and the figure is used.
+22.5 min and 62.8 °C, and the figure is used. The 25 min of the text is close to the switch-off time on the figure
+axis (25.4 min), which starts about 3 min before switch-on. A uniform error in the time axis would rescale `a` and
+`τ` alike and leave `t_off/τ`, all relative changes of `a` and all residuals unchanged.
 
 ```bibtex
 @article{armentagamez2026,

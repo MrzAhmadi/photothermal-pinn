@@ -18,17 +18,19 @@ class Net(nn.Module):
         output_dim,
         n_units=100,
         epochs=1000,
-        loss=nn.MSELoss(),
+        data_loss=nn.MSELoss(),
         lr=1e-3,
-        loss2=None,
-        loss2_weight=0.1,
+        physics_loss=None,
+        data_weight=1.0,
+        physics_weight=0.1,
     ) -> None:
         super().__init__()
 
         self.epochs = epochs
-        self.loss = loss
-        self.loss2 = loss2
-        self.loss2_weight = loss2_weight
+        self.data_loss = data_loss
+        self.physics_loss = physics_loss
+        self.data_weight = data_weight
+        self.physics_weight = physics_weight
         self.lr = lr
         self.n_units = n_units
 
@@ -60,9 +62,9 @@ class Net(nn.Module):
         for ep in range(self.epochs):
             optimiser.zero_grad()
             outputs = self.forward(Xt)
-            loss = self.loss(yt, outputs)
-            if self.loss2:
-                loss += self.loss2_weight * self.loss2(self)
+            loss = self.data_weight * self.data_loss(yt, outputs)
+            if self.physics_loss:
+                loss += self.physics_weight * self.physics_loss(self)
             loss.backward()
             optimiser.step()
             losses.append(loss.item())
@@ -83,13 +85,15 @@ class NetDiscovery(Net):
         output_dim,
         n_units=100,
         epochs=1000,
-        loss=nn.MSELoss(),
+        data_loss=nn.MSELoss(),
         lr=0.001,
-        loss2=None,
-        loss2_weight=0.1,
+        physics_loss=None,
+        data_weight=1.0,
+        physics_weight=0.1,
     ) -> None:
         super().__init__(
-            input_dim, output_dim, n_units, epochs, loss, lr, loss2, loss2_weight
+            input_dim, output_dim, n_units, epochs, data_loss, lr,
+            physics_loss, data_weight, physics_weight,
         )
 
         self.kappa = nn.Parameter(data=torch.tensor([0.]))

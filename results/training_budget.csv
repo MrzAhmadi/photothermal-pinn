@@ -1,0 +1,3 @@
+model,n_params,n_params_loss_net,adam_steps,lbfgs_iter_limit,lbfgs_eval_limit,lbfgs_iters,lbfgs_evals,lbfgs_stop,seconds_adam,seconds_lbfgs,ms_per_evaluation
+linear-loss,30703,0,3000,300,375,300,345,iteration limit,8.048924141993211,2.018744253005025,3.009766336322343
+learned-loss,31183,481,8000,1000,1250,811,939,tolerance,21.736656613996274,6.007182233005096,3.103684846962901

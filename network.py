@@ -52,7 +52,7 @@ class Net(nn.Module):
 
         return out
 
-    def fit(self, X, y):
+    def fit(self, X, y, on_step=None):
         Xt = np_to_th(X)
         yt = np_to_th(y)
 
@@ -62,10 +62,15 @@ class Net(nn.Module):
         for ep in range(self.epochs):
             optimiser.zero_grad()
             outputs = self.forward(Xt)
-            loss = self.data_weight * self.data_loss(yt, outputs)
+            data_term = self.data_loss(yt, outputs)
+            loss = self.data_weight * data_term
+            physics_term = None
             if self.physics_loss:
-                loss += self.physics_weight * self.physics_loss(self)
+                physics_term = self.physics_loss(self)
+                loss += self.physics_weight * physics_term
             loss.backward()
+            if on_step is not None:
+                on_step(ep, data_term, physics_term)
             optimiser.step()
             losses.append(loss.item())
             if ep % int(self.epochs / 10) == 0:

@@ -1,5 +1,5 @@
 experiment,switch,seed,a_err_pct,tau_err_pct
-"full  (heat 5τ, cool 5τ)",False,0,10.034264995741115,-11.763144171770099
+"full  (heat 5τ, cool 5τ)",False,0,-6.791116611475495,5.965297642374803
 "full  (heat 5τ, cool 5τ)",False,1,1.618992035306868,-1.4025678796703953
 "full  (heat 5τ, cool 5τ)",False,2,9.276428218457255,-9.85433481963319
 "full  (heat 5τ, cool 5τ)",False,3,-14.945987885939065,14.504488665587038
